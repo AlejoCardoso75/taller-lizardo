@@ -1,0 +1,20 @@
+ENLACE DEL REPOSITORIO REMOTO
+GA7-220501096-AA3-EV01 - Módulo de Inventario con Spring Boot (Taller Lizardo Car)
+
+Este proyecto ya se entrega con un repositorio Git local inicializado
+(carpeta oculta .git, con el historial de commits del desarrollo del módulo).
+
+Para completar el versionamiento remoto:
+
+  1. Crear un repositorio vacío en GitHub, por ejemplo:
+     taller-lizardo-car-spring
+
+  2. Desde la carpeta del proyecto, ejecutar:
+     git remote add origin https://github.com/SU_USUARIO/taller-lizardo-car-spring.git
+     git branch -M main
+     git push -u origin main
+
+  3. Reemplazar la siguiente línea con la URL real de su repositorio
+     ya publicado en GitHub:
+
+ENLACE: [ PEGAR AQUÍ LA URL DEL REPOSITORIO EN GITHUB ]
