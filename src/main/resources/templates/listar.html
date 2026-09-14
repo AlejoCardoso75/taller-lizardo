@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventario - Taller Lizardo Car</title>
+    <link rel="stylesheet" th:href="@{/css/estilos.css}">
+</head>
+<body>
+
+<header class="sitio-header">
+    <h1>Taller Lizardo Car</h1>
+    <p>Módulo de Inventario (Spring Boot)</p>
+</header>
+
+<main class="contenido">
+    <div class="card">
+        <div class="barra-acciones">
+            <h2>Productos disponibles</h2>
+            <!-- th:href genera la URL usando el contexto real de la aplicación -->
+            <a class="btn btn-primario" th:href="@{/productos/nuevo}">+ Nuevo producto</a>
+        </div>
+
+        <table class="tabla-datos">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Categoría</th>
+                    <th>Marca</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- th:each recorre la lista "productos" enviada desde el controlador -->
+                <tr th:each="producto : ${productos}">
+                    <td th:text="${producto.id}"></td>
+                    <td th:text="${producto.nombre}"></td>
+                    <td th:text="${producto.categoria}"></td>
+                    <td th:text="${producto.marca}"></td>
+                    <td th:text="${producto.cantidad}"></td>
+                    <td th:text="${'$' + #numbers.formatInteger(producto.precio, 1, 'COMMA')}"></td>
+                    <td>
+                        <a class="btn btn-secundario pequeno" th:href="@{/productos/editar/{id}(id=${producto.id})}">Editar</a>
+                        <a class="btn btn-alerta pequeno" th:href="@{/productos/eliminar/{id}(id=${producto.id})}"
+                           onclick="return confirm('¿Eliminar este producto?');">Eliminar</a>
+                    </td>
+                </tr>
+                <!-- Mensaje mostrado solo si la lista viene vacía -->
+                <tr th:if="${#lists.isEmpty(productos)}">
+                    <td colspan="7" class="tabla-vacia">No hay productos registrados.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<footer class="sitio-footer">
+    <p>Taller Lizardo Car &middot; GA7-220501096-AA3-EV01</p>
+</footer>
+
+</body>
+</html>

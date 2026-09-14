@@ -1,0 +1,92 @@
+:root {
+  --color-fondo: #E2E9D0;
+  --color-superficie: #FFFFFF;
+  --color-oscuro: #161F27;
+  --color-primario: #B9BEAB;
+  --color-acento-nav: #B5B791;
+  --color-alerta: #EE2F51;
+  --color-secundario: #59EBF4;
+  --radio-borde: 10px;
+  --sombra-suave: 0 4px 10px rgba(22, 31, 39, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-oscuro);
+  line-height: 1.6;
+}
+
+.sitio-header {
+  background-color: var(--color-oscuro);
+  color: var(--color-acento-nav);
+  padding: 18px 24px;
+}
+.sitio-header h1 { margin: 0; color: #fff; font-size: 1.3rem; }
+.sitio-header p { margin: 4px 0 0 0; font-size: 0.85rem; }
+
+.contenido { max-width: 900px; margin: 0 auto; padding: 26px 20px; }
+
+.card {
+  background-color: var(--color-superficie);
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-suave);
+  padding: 24px;
+}
+
+.barra-acciones {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 9px 16px;
+  border: none;
+  border-radius: var(--radio-borde);
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.btn-primario { background-color: var(--color-primario); color: var(--color-oscuro); }
+.btn-secundario { background-color: var(--color-secundario); color: var(--color-oscuro); }
+.btn-alerta { background-color: var(--color-alerta); color: #fff; }
+.btn-outline { background: transparent; border: 2px solid var(--color-primario); color: var(--color-oscuro); }
+.btn.pequeno { padding: 6px 10px; font-size: 0.8rem; margin-right: 4px; }
+
+table.tabla-datos { width: 100%; border-collapse: collapse; }
+.tabla-datos th {
+  background-color: var(--color-primario);
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+}
+.tabla-datos td { padding: 10px 12px; border-top: 1px solid #eee; }
+.tabla-vacia { text-align: center; color: #888; padding: 20px !important; }
+
+.campo { margin-bottom: 16px; }
+.campo label { display: block; font-weight: 600; margin-bottom: 6px; }
+.campo input {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #ccc;
+  border-radius: var(--radio-borde);
+  font-size: 1rem;
+}
+
+.sitio-footer {
+  text-align: center;
+  padding: 14px;
+  background-color: var(--color-oscuro);
+  color: var(--color-acento-nav);
+  font-size: 0.78rem;
+}
