@@ -20,9 +20,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ProductoRepositorio extends JpaRepository<Producto, Integer> {
-    // No es necesario declarar métodos: JpaRepository ya provee
-    // save(), findAll(), findById(), deleteById(), existsById(), etc.
-    // Si se necesitaran consultas personalizadas, se declararían aquí
-    // como métodos abstractos, por ejemplo:
-    // List<Producto> findByCategoria(String categoria);
+
 }
